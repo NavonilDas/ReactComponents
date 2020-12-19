@@ -40,7 +40,7 @@ a {
   justify-content: center;
 }
 
-.navitem a {
+.navitem > a {
   color: var(--text-color);
   --buttonSize: calc(var(--nav-size) * 0.5);
   width: var(--buttonSize);
@@ -55,12 +55,76 @@ a {
   cursor: pointer;
 }
 
-.navitem a:hover {
+.navitem > a:hover {
   filter: brightness(1.2);
 }
 
-.navitem a svg {
+.navitem > a svg {
   width: 28px;
   height: 28px;
   fill: var(--text-color);
+}
+
+.navbar-dropdown {
+  position: absolute;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-45%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 11px;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+}
+
+.navbar-menu-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+  color: var(--text-color);
+}
+
+.navbar-menu-item > span {
+  display: flex;
+}
+
+.navbar-menu-item:hover {
+  background-color: #525357;
+}
+
+.drop-menu-con {
+  width: 100%;
+}
+
+.navbar-drop-menu-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.navbar-drop-menu-enter-active {
+  transition: all var(--speed) ease;
+  transform: translateX(0%);
+}
+.navbar-drop-menu-exit {
+  position: absolute;
+}
+.navbar-drop-menu-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+.navbar-drop-menu-sec-enter {
+  transform: translateX(110%);
+}
+.navbar-drop-menu-sec-enter-active {
+  transition: all var(--speed) ease;
+  transform: translateX(0%);
+}
+.navbar-drop-menu-sec-exit {
+}
+.navbar-drop-menu-sec-exit-active {
+  transition: all var(--speed) ease;
+  transform: translateX(110%);
 }
